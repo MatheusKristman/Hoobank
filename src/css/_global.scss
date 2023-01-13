@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $poppins;
+}
+
+// html,
+// body {
+//   overflow-x: hidden;
+// }
+
+html {
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #00040F;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  padding: 0 25px 0 25px;
+
+  @include breakpoint(tablet) {
+    padding: 0 60px 0 60px;
+  }
+
+  @include breakpoint(largeScreen) {
+    padding: 0 120px 0 120px;
+  }
+
+  @include breakpoint(extraLargeScreen) {
+    padding: 0;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
