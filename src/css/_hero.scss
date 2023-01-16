@@ -3,21 +3,57 @@
   background-image: url(../assets/hero-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
-  
+  background-size: 100% 110%;
+
   .hero {
     width: 100%;
     padding-left: 25px;
+    padding-top: 25px;
+
+    @include breakpoint(tablet) {
+      padding-left: 60px;
+      padding-top: 50px;
+    }
+
+    @include breakpoint(largeScreen) {
+      padding-left: 120px;
+      padding-top: 150px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+      padding-left: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+    }
         
     &__wrapper {
       display: flex;
       flex-direction: column;
+
+      @include breakpoint(largeScreen) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      @include breakpoint(extraLargeScreen) {
+        max-width: 1200px;
+        margin: auto;
+      }
 
       .hero-info {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-right: 25px;
+
+        @include breakpoint(tablet) {
+          margin-right: 60px;
+          align-items: flex-start;
+        }
 
         .discount-container {
           display: flex;
@@ -43,10 +79,32 @@
         }
 
         .info-wrapper {
-          
+          width: 100%;
+
+          @include breakpoint(tablet) {
+            display: flex;
+            align-items: center;
+          }
+
+          @include breakpoint(smallScreen) {
+            align-items: flex-start;
+          }
+
+
           .info-title {
             color: #fff;
             font-size: 2.5rem;
+            font-weight: 600;
+
+            @include breakpoint(tablet) {
+              max-width: 260px;
+            }
+
+            @include breakpoint(smallScreen) {
+              font-size: 4.5rem;
+              line-height: 100px;
+              max-width: 460px;
+            }
 
             strong {
               background: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #DEF9FA 0.89%, #BEF3F5 17.23%, #9DEDF0 42.04%, #7DE7EB 55.12%, #5CE1E6 71.54%, #33BBCF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
@@ -56,16 +114,245 @@
               text-fill-color: transparent;
             }
           }
+
+          .cta-outer-bg {
+            width: 140px;
+            height: 140px;
+            min-width: 140px;
+            min-height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            @include breakpoint(tablet) {
+              display: flex;
+              background: transparent;
+            }            
+
+            .cta-inner-bg {
+              width: 134px;
+              height: 134px;
+              border-radius: 50%;
+              background-color: #00040F;
+              display: flex; 
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+
+              @include breakpoint(tablet) {
+                background-color: transparent;
+                border: 3px solid #5CE1E6;
+              }
+
+              @include breakpoint(largeScreen) {
+                cursor: pointer;
+              }
+
+              .top-text {
+                display: flex;
+                width: 60px;
+                height: 20px;
+                gap: 5px;
+
+                .cta-text {
+                  background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                  text-fill-color: transparent;
+                  font-size: 1rem;
+                  line-height: 22px;
+                }
+              }
+
+              .cta-text {
+                background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                font-size: 1rem;
+              }
+            }
+          }         
+        }
+
+        .info-title {
+          color: #fff;
+          font-size: 2.5rem;
+          font-weight: 600;
+          width: 100%;
+          margin-top: -10px;
+          
+          @include breakpoint(smallScreen) {
+            font-size: 4.5rem;
+            margin-top: 0;
+            width: 650px;
+          }
+        }
+
+        .info-desc {
+          margin-top: 25px;
+          color: #fff;
+          opacity: 0.7;
+          font-size: 1rem;
+          line-height: 30px;
+
+          @include breakpoint(smallScreen) {
+            max-width: 480px;
+            font-size: 1.125rem;
+          }
         }
       }
 
       .hero-image {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(tablet) {
+          align-items: flex-end;
+        }
+
+        @include breakpoint(extraLargeScreen) {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 50%;
+        }
 
         .hero-robot {
           width: 100%;
           height: auto;
-          max-width: 670px;
+          max-width: 760px;
+          margin-bottom: 50px;
+        }
+
+        .cta-mobile {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translateX(-15px);
+
+          @include breakpoint(tablet) {
+            display: none;
+          }
+
+          .cta-inner-bg {
+            width: 134px;
+            height: 134px;
+            border-radius: 50%;
+            background-color: #00040F;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .top-text {
+              display: flex;
+              width: 60px;
+              height: 20px;
+              gap: 5px;
+
+              .cta-text {
+                background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                font-size: 1rem;
+                line-height: 22px;
+              }
+            }
+
+            .cta-text {
+              background: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-fill-color: transparent;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .datas-container {
+      width: 100%;
+      margin-top: 50px;
+      transform: translateX(-12.5px);
+
+      @include breakpoint(largeScreen) {
+        transform: none;
+        margin-top: 150px;
+        padding-right: 120px;
+      }
+      
+      @include breakpoint(extraLargeScreen) {
+        margin: 200px auto 0 auto;
+        max-width: 1200px;        
+        padding: 0;
+      }
+
+      .datas-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(largeScreen) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .user-active, .trusted-company, .transaction {
+          display: flex;
+          align-items: center;
+
+          h4 {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-right: 10px;
+
+            @include breakpoint(tablet) {
+              font-size: 2.5rem;
+            }
+          }
+
+          span {
+            background: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #DEF9FA 0.89%, #BEF3F5 17.23%, #9DEDF0 42.04%, #7DE7EB 55.12%, #5CE1E6 71.54%, #33BBCF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-transform: uppercase;
+            font-size: 1rem;
+
+            @include breakpoint(tablet) {
+              font-size: 1.25rem;
+            }
+          }
+        }
+
+        .data-line {
+          width: 50%;
+          height: 1px;
+          background-color: #fff;
+          margin: 25px 0 25px 0;
+
+          @include breakpoint(largeScreen) {
+            width: 1px;
+            height: 15px;
+            margin: 0;
+          }
         }
       }
     }

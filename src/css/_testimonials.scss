@@ -1,0 +1,122 @@
+.testimonials {
+  padding-top: 100px;
+
+  @include breakpoint(smallScreen) {
+    padding-top: 150px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+
+    @include breakpoint(largeScreen) {
+      gap: 80px;
+    }
+
+    .testimonials-header {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @include breakpoint(smallScreen) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .testimonials-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+
+        @include breakpoint(tablet) {
+          font-size: 3rem;
+          max-width: 470px;
+        }
+      }
+
+      .testimonials-desc {
+        font-size: 1rem;
+        color: #fff;
+        opacity: 0.7;
+        max-width: 470px;
+      }
+    }
+
+    .testimonials-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include breakpoint(smallScreen) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      @include breakpoint(extraLargeScreen) {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+
+      .testimonial-card {
+        padding: 30px 20px;
+        max-width: 370px;
+
+        @include breakpoint(tablet) {
+          padding: 60px 40px;
+        }
+
+        @include breakpoint(largeScreen) {
+          &:hover {
+            background: linear-gradient(144.39deg, #FFFFFF -278.56%, #6D6D6D -78.47%, #11101D 91.61%);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+          }
+        }
+
+        .quotes {
+          width: 40px;
+          height: auto;
+          margin-bottom: 40px;
+        }
+
+        .testimonial-text {
+          font-size: 1rem;
+          color: #fff;
+          line-height: 32px;
+          margin-bottom: 30px;
+        }
+
+        .people-container {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          .people-image {
+            width: 48px;
+            height: 48px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .people-info {
+            .people-name {
+              font-size: 1.125rem;
+              color: #fff;
+            }
+
+            .people-job {
+              font-size: 1rem;
+              color: #fff;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

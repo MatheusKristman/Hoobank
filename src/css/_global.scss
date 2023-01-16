@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: $poppins;
+  scroll-behavior: smooth;
 }
 
 // html,
@@ -38,4 +39,18 @@ body {
     max-width: 1200px;
     margin: auto;
   }
+}
+
+.about-features-bg {
+  background-image: url('../assets/about-features-bg.png');
+  background-position: center left;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.testimonial-solution-bg {
+  background-image: url('../assets/testimonial-solution-bg.png');
+  background-position: center right;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
