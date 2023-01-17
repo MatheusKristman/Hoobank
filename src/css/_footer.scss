@@ -1,0 +1,188 @@
+.footer {
+  background-color: rgba(11, 10, 12, 0.6);
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @include breakpoint(tablet) {
+    padding-top: 72px;
+  }
+
+  @include breakpoint(extraLargeScreen) {
+    max-width: none;
+    width: 100%;
+    margin: none;
+  }
+
+  &__container {
+    width: 100%;
+
+    @include breakpoint(extraLargeScreen) {
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .footer-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 50px;
+
+      @include breakpoint(smallScreen) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+
+      @include breakpoint(extraLargeScreen) {
+        justify-content: space-between;
+      }
+
+      .logo-phrase-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(smallScreen) {
+          align-items: flex-start;
+        }
+
+        .logo {
+          width: 200px;
+          height: auto;
+
+          @include breakpoint(smallScreen) {
+            width: 250px;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .phrase {
+          margin-top: 15px;
+          color: #fff;
+          text-align: center;
+          opacity: 0.7;
+          max-width: 310px;
+
+          @include breakpoint(smallScreen) {
+            text-align: left;
+          }
+        }
+      }
+
+      .usefull-links-box, .community-box, .partner-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoint(smallScreen) {
+          width: fit-content;
+          align-items: flex-start;
+        }
+
+        .usefull-links-title, .community-title, .partner-title {
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 25px;
+
+          @include breakpoint(smallScreen) {
+            text-align: left;
+          }
+        }
+
+        .usefull-links-list, .community-list, .partner-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+
+          @include breakpoint(smallScreen) {
+            align-items: flex-start;
+          }
+
+          .usefull-links-link, .community-link, .partner-link {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+
+            @include breakpoint(largeScreen) {
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dev-box {
+      border-top: 1px solid #3F3E45;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+
+      @include breakpoint(largeScreen) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .dev-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        @include breakpoint(largeScreen) {
+          flex-direction: row;
+        }
+
+        a {
+          width: auto;
+          height: 35px;
+
+          @include breakpoint(largeScreen) {
+            height: 45px;
+          }
+
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+
+        span {
+          font-size: 1rem;
+          color: rgba(255, 255, 255, 0.6);
+          text-align: center;
+        }
+      }
+
+      .socials-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        list-style: none;
+
+        li .linkedin, li .instagram, li .github {
+          text-decoration: none;
+          color: #fff;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

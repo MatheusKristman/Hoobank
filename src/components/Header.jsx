@@ -27,16 +27,16 @@ const Header = () => {
 
           <ul className={isMenuOpen ? 'nav-links open' : 'nav-links'}>
             <li onClick={closeMenu} className='nav-link'>
-              <a href='#home'>Inicio</a>
+              <a href='#home'>Home</a>
             </li>
             <li onClick={closeMenu} className='nav-link'>
-              <a href='#about'>Sobre</a>
+              <a href='#about'>About Us</a>
             </li>
             <li onClick={closeMenu} className='nav-link'>
-              <a href='#features'>Beneficios</a>
+              <a href='#features'>Features</a>
             </li>
             <li onClick={closeMenu} className='nav-link'>
-              <a href='#solution'>Solução</a>
+              <a href='#solution'>Solution</a>
             </li>
           </ul>
         </nav>
