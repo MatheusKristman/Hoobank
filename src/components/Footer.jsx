@@ -60,17 +60,17 @@ const Footer = () => {
           <ul className='socials-wrapper'>
             <li>
               <a href="https://www.linkedin.com/in/matheus-kristman/" target='_blank' rel='noreferrer noopener' className='linkedin'>
-                <i class="fa-brands fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin"></i>
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/tinzin.exe/" target='_blank' rel='noreferrer noopener' className='instagram'>
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </a>
             </li>
             <li>
               <a href="https://github.com/MatheusKristman" target='_blank' rel='noreferrer noopener' className='github'>
-                <i class="fa-brands fa-github"></i>
+                <i className="fa-brands fa-github"></i>
               </a>
             </li>
           </ul>

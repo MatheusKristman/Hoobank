@@ -1,27 +1,43 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const Feature = ({ image, title, desc, apple, google, btn }) => {
+const Feature = ({
+  image,
+  title,
+  desc,
+  apple,
+  google,
+  btn,
+  reference,
+  control,
+  imageVariant,
+  titleVariant,
+  textVariant,
+  buttonVariant,
+}) => {
   return (
-    <div className='feature-wrapper'>
-      <div className='feature-image'>
-        <img src={image} alt="ilustração" />
-      </div>
+    <div ref={reference} className='feature-wrapper'>
+      <motion.div variants={imageVariant} initial='hidden' animate={control} className='feature-image'>
+        <img src={image} alt='ilustração' />
+      </motion.div>
 
       <div className='feature-info'>
-        <h4 className='feature-title'>{title}</h4>
-        <p className='feature-desc'>{desc}</p>
+        <motion.h4 variants={titleVariant} initial='hidden' animate={control} className='feature-title'>{title}</motion.h4>
+        <motion.p variants={textVariant} initial='hidden' animate={control} className='feature-desc'>{desc}</motion.p>
 
         {btn ? (
-          <button className='feature-btn' type='button'>Get Started</button>
+          <motion.button variants={buttonVariant} initial='hidden' animate={control} className='feature-btn' type='button'>
+            Get Started
+          </motion.button>
         ) : (
-          <div className='feature-link-wrapper'>
+          <motion.div variants={buttonVariant} initial='hidden' animate={control} className='feature-link-wrapper'>
             <img src={apple} alt='app store' className='apple' />
             <img src={google} alt='google play' className='google' />
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Feature;

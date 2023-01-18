@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const PeopleCard = ({ quote, text, peopleImg, peopleName, peopleJob }) => {
+const PeopleCard = ({ quote, text, peopleImg, peopleName, peopleJob, cardVariant, control }) => {
   return (
-    <div className='testimonial-card'>
+    <motion.div variants={cardVariant} initial='hidden' animate={control} className='testimonial-card'>
       <img src={quote} alt='aspas' className='quotes' />
 
       <p className='testimonial-text'>{text}</p>
@@ -18,7 +19,7 @@ const PeopleCard = ({ quote, text, peopleImg, peopleName, peopleJob }) => {
           <p className='people-job'>{peopleJob}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

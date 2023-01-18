@@ -8,7 +8,8 @@
   .hero {
     width: 100%;
     padding-left: 25px;
-    padding-top: 25px;
+    padding-top: 50px;
+    overflow-x: hidden;
 
     @include breakpoint(tablet) {
       padding-left: 60px;
